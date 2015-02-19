@@ -10,7 +10,7 @@ respawn limit {{ service_respawn_limit }}
 
 # Ensure log directory exists
 pre-start script
-  mkdir -p `dirname {{ service_log_file }}`
+  mkdir -p {{ service_log_file | dirname }}
 end script
 
 # Run the server
