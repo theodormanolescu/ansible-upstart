@@ -4,3 +4,10 @@
     - upstart
   template: src=upstart.conf.j2 dest=/etc/init/{{ service_name }}.conf
   sudo: yes
+
+- name: Restart service
+  tags:
+    - upstart
+  service: name={{ service_name }} state=restarted
+  sudo: yes
+  when: service_restart
