@@ -5,6 +5,12 @@
   template: src=upstart.conf.j2 dest=/etc/init/{{ service_name }}.conf
   sudo: yes
 
+- name: Make sure log directory exists
+  tags:
+    - upstart
+  file: state=directory path={{ service_log_file | dirname }}
+  sudo: yes
+
 - name: Restart service
   tags:
     - upstart
