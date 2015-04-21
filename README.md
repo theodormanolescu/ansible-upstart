@@ -14,6 +14,7 @@ You **must** specify:
 The default variables are as follows:
 
 ```
+service_env: ''                                # Environment variables as 'VAR=val VAR2=val2'
 service_chdir: '{{ service_exec | dirname }}'  # The directory to execute from
 service_user: '{{ ansible_ssh_user }}'         # The user that runs the service executable
 service_respawn_limit: '20 5'                  # How many times to respawn and the wait time in sec

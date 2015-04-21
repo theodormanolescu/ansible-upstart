@@ -17,5 +17,5 @@ end script
 script
   chdir {{ service_chdir }}
   # Run compiler start and redirect output to log file
-  exec {{ service_exec }} >> {{ service_log_file }} 2>&1
+  {{ service_env }} exec {{ service_exec }} >> {{ service_log_file }} 2>&1
 end script
