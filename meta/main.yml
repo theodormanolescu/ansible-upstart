@@ -2,7 +2,7 @@
 galaxy_info:
   author: Rhys Adams
   description: Adds an Upstart service.
-  company: SSIL
+  company: DSTIL
   license: BSD
   min_ansible_version: 1.2
   platforms:
