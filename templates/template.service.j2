@@ -1,0 +1,15 @@
+# Ansible managed: changes may be overwritten
+
+[Unit]
+After=network.target
+X-Deployed-With=ansible
+
+[Service]
+User={{ service_user }}
+WorkingDirectory={{ service_chdir }}
+ExecStart={{ service_exec }}
+Environment={{ service_env }}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
